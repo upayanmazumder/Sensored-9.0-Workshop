@@ -1,0 +1,15 @@
+language: c
+sudo: false
+
+env:
+  global:
+  - PRETTYNAME="Light Dependent Resistor (GL55xx, ...)"
+
+before_install:
+- source <(curl -SLs https://raw.githubusercontent.com/adafruit/travis-ci-arduino/master/install.sh)
+
+script:
+- build_samd_platforms
+- build_arcada_platforms
+# M4 auto-test build not handled correctly by Adafruit script...
+#- build_m4_platforms
